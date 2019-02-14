@@ -1,3 +1,6 @@
+import dataManager from "./dataManager";
+import registrationFormButton from "./submitRegistrationForm";
+
 const registrationHTML = () => {
     document.querySelector("#output").innerHTML += 
     `
@@ -33,6 +36,8 @@ const registrationHTML = () => {
 
     <button id="formButton">Register</button>
     `
+    registrationFormButton() 
 }
+
 
 export default registrationHTML
