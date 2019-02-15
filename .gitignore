@@ -1,5 +1,5 @@
 node_modules
-.DS_Store
+public/*.js
 bower_components
 __pycache__
 *.pyc
@@ -9,3 +9,4 @@ obj
 *.sqlite3
 .vscode
 dist
+database.json
