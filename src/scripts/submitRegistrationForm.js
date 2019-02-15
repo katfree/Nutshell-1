@@ -7,27 +7,33 @@ const registrationFormButton = () => {
         const first_name = document.querySelector("#inputFirstName").value
         const last_name = document.querySelector("#inputLastName").value
         const email = document.querySelector("#inputEmail").value
-            console.log(userName)
+
         const inputUserObject = {
             userName: userName,
             password: password,
             first_name: first_name,
             last_name: last_name,
-            email: email
+
         }
         dataManager.getData()
-        .then((userList => {
-            userList.forEach((user) => {
-                if (user.userName === inputUserObject.userName) {
-                    alert("this user already exists")
-                } else {
+            .then((userList => {
+                const search = userList.filter(user => user.userName === inputUserObject.userName )
+                console.log(search)
+                if (search.length) {
+                    alert("This user name is taken")
 
+                } else {
                     dataManager.postUserData(inputUserObject)
+
+                    // document.querySelector("#output").innerHTML += ""
                 }
 
+
             })
-        })
-        )
+
+
+
+            )
     })
 }
 

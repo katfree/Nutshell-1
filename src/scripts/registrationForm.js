@@ -2,7 +2,7 @@ import dataManager from "./dataManager";
 import registrationFormButton from "./submitRegistrationForm";
 
 const registrationHTML = () => {
-    document.querySelector("#output").innerHTML += 
+    document.querySelector("#output").innerHTML +=
     `
     <h1>Registration Form<h1>
     <div>
@@ -10,7 +10,7 @@ const registrationHTML = () => {
     <label>Username</label>
     <input type="text" id="inputUsername"></input>
     </fieldset>
-    
+
     <fieldset>
     <label>Password</label>
     <input type="text" id="inputPassword"></input>
@@ -29,14 +29,9 @@ const registrationHTML = () => {
     </fieldset>
     </div>
 
-    <fieldset>
-    <label>Email</label>
-    <input type="text" id="inputEmail"></input>
-    </fieldset>
-
-    <button id="formButton">Register</button>
+     <button id="formButton">Register</button>
     `
-    registrationFormButton() 
+    registrationFormButton()
 }
 
 

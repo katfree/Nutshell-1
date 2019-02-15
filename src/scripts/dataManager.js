@@ -1,6 +1,6 @@
 const dataManager = {
-   getData: function() { 
-   return fetch("http://localhost:3005/Users")
+   getData: function() {
+   return fetch("http://localhost:3005/Users/")
    .then(res => res.json())
 
 },
