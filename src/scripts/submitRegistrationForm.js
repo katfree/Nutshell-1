@@ -15,7 +15,19 @@ const registrationFormButton = () => {
             last_name: last_name,
             email: email
         }
-        dataManager.postUserData(inputUserObject)
+        dataManager.getData()
+        .then((userList => {
+            userList.forEach((user) => {
+                if (user.userName === inputUserObject.userName) {
+                    alert("this user already exists")
+                } else {
+
+                    dataManager.postUserData(inputUserObject)
+                }
+
+            })
+        })
+        )
     })
 }
 
