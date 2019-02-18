@@ -7,7 +7,6 @@ const registrationFormButton = () => {
         const first_name = document.querySelector("#inputFirstName").value
         const last_name = document.querySelector("#inputLastName").value
 
-
         const inputUserObject = {
             userName: userName,
             password: password,
@@ -24,8 +23,8 @@ const registrationFormButton = () => {
 
                 } else {
                     dataManager.postUserData(inputUserObject)
+                    .then(document.querySelector("#registartionForm").remove())
 
-                    // document.querySelector("#output").innerHTML += ""
                 }
 
 
