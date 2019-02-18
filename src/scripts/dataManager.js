@@ -14,6 +14,7 @@ const dataManager = {
     .then(res => res.json())
 
    }
+
 }
 
 export default dataManager

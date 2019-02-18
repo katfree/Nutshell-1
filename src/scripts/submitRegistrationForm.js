@@ -1,4 +1,7 @@
 import dataManager from "./dataManager"
+import eventListHTML from "./eventScripts/eventListHTML";
+import eventDataManager from "../scripts/eventScripts/eventDataManager"
+
 
 const registrationFormButton = () => {
     document.querySelector("#formButton").addEventListener("click", () => {
@@ -25,13 +28,11 @@ const registrationFormButton = () => {
                     dataManager.postUserData(inputUserObject)
                     .then(document.querySelector("#registartionForm").remove())
 
+                  eventListHTML()
+
+
                 }
-
-
             })
-
-
-
             )
     })
 }
