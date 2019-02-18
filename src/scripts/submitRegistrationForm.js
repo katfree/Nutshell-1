@@ -1,4 +1,6 @@
 import dataManager from "./dataManager"
+import taskCreator from "./Tasks/tasks";
+
 
 const registrationFormButton = () => {
     document.querySelector("#formButton").addEventListener("click", () => {
@@ -24,6 +26,9 @@ const registrationFormButton = () => {
                 } else {
                     dataManager.postUserData(inputUserObject)
                     .then(document.querySelector("#registartionForm").remove())
+
+                    taskCreator()
+
 
                 }
 
