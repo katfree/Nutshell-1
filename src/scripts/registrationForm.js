@@ -1,4 +1,3 @@
-import dataManager from "./dataManager";
 import registrationFormButton from "./submitRegistrationForm";
 
 const registrationHTML = () => {
