@@ -7,7 +7,6 @@ const registrationFormButton = () => {
         const first_name = document.querySelector("#inputFirstName").value
         const last_name = document.querySelector("#inputLastName").value
 
-
         const inputUserObject = {
             userName: userName,
             password: password,
@@ -23,14 +22,8 @@ const registrationFormButton = () => {
                     alert("This user name is taken")
 
                 } else {
-                    dataManager.postUserData(inputUserObject).then(
-                        () => {
-
-                        document.querySelector("#inputUsername").innerHTML = ""
-                        document.querySelector("#inputPassword").innerHTML = ""
-                        document.querySelector("#inputFirstName").innerHTML = ""
-                        document.querySelector("#inputLastName").innerHTML= ""
-                    })
+                    dataManager.postUserData(inputUserObject)
+                    .then(document.querySelector("#registartionForm").remove())
 
                 }
 
