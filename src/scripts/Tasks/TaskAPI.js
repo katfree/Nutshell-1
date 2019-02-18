@@ -1,6 +1,7 @@
 const APIManager = {
-  grabtheTasks: function () {
-    return fetch("http://localhost:3005/Tasks/").then(response => response.json())
+  grabTasks: function () {
+    return fetch("http://localhost:3005/Tasks/")
+    .then(res => res.json)
   },
   postTasks: function () {
     return fetch("http://localhost:3005/Tasks/", {
@@ -14,4 +15,4 @@ const APIManager = {
     return fetch ("http://localhost:3005/Tasks/")
   }
 }
-export default {APIManager}
+export {APIManager}
