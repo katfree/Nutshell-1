@@ -6,7 +6,7 @@ const registrationFormButton = () => {
         const password = document.querySelector("#inputPassword").value
         const first_name = document.querySelector("#inputFirstName").value
         const last_name = document.querySelector("#inputLastName").value
-        const email = document.querySelector("#inputEmail").value
+
 
         const inputUserObject = {
             userName: userName,
