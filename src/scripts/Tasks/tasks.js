@@ -1,4 +1,4 @@
-import APIManager from "./TaskAPI"
+
 import taskEventListener from "./tasksEventListener"
 
   const taskCreator = () => {
@@ -34,27 +34,6 @@ import taskEventListener from "./tasksEventListener"
     `
     taskEventListener();
 
-    APIManager.grabTasks().then(tasks => {
-      debugger
-      tasks.forEach(task => {
-
-          let taskName = task.task_name;
-          let date = task.task_date;
-
-          const htmlBuilder =
-          `
-          <h1>${taskName}</h1>
-          <h2>${date}</h2>
-
-          `
-
-          let fullTaskList = document.querySelector('#full_task_list')
-
-
-          fullTaskList.innerHTML += htmlBuilder
-
-        });
-    })
 
 
   }

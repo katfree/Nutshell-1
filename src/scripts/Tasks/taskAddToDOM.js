@@ -7,4 +7,4 @@ return `<h1>${task.task_name}</h1>
         `
 }
 
-export default addToDOM; 
+export default addToDOM;

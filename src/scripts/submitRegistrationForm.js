@@ -21,7 +21,7 @@ const registrationFormButton = () => {
 
         let sesh = JSON.parse(sessionStorage.getItem("inputUserObject"))
 
-        // console.log(sesh)
+        console.log(sesh)
 
         dataManager.getData()
             .then((userList => {
