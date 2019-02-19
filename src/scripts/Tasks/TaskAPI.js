@@ -1,20 +1,22 @@
 const APIManager = {
-  grabTasks: function () {
+  grabTasks: function() {
     return fetch("http://localhost:3005/Tasks/")
-    .then(res => res.json()).then(() => {
-      console.log("hi")
-    })
-  } ,
-  postTasks: function () {
+    .then(res => res.json())
+  },
+  postTasks: function (userObject) {
     return fetch("http://localhost:3005/Tasks/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify()
+      body: JSON.stringify(userObject)
     })
-  }, deleteTasks: () => {
-    return fetch ("http://localhost:3005/Tasks/")
+  }, deleteTasks: (taskId) => {
+    return fetch (`http://localhost:3005/Tasks/${taskId}`,
+    {
+      method: "DELETE"
+    })
   }
 }
-export {APIManager}
+export default APIManager
+

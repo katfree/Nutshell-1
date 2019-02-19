@@ -1,5 +1,5 @@
 import dataManager from "./dataManager"
-import taskCreator from "./Tasks/tasks";
+import tasksPage from "./Tasks/task"
 
 
 const registrationFormButton = () => {
@@ -14,14 +14,13 @@ const registrationFormButton = () => {
             password: password,
             first_name: first_name,
             last_name: last_name,
-
         }
 
         sessionStorage.setItem(inputUserObject, JSON.stringify(inputUserObject))
 
         let sesh = JSON.parse(sessionStorage.getItem("inputUserObject"))
 
-        console.log(sesh)
+        // console.log(sesh)
 
         dataManager.getData()
             .then((userList => {
@@ -33,16 +32,9 @@ const registrationFormButton = () => {
                 } else {
                     dataManager.postUserData(inputUserObject)
                     .then(document.querySelector("#registartionForm").remove())
-
-                    taskCreator()
-
-
+                    tasksPage();
                 }
-
-
             })
-
-
 
             )
     })

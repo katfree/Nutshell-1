@@ -1,27 +1,27 @@
 import APIManager from "./TaskAPI"
 
-const taskEventListener = () => {document.querySelector("#EnterTask").addEventListener("click", () => {
-APIManager.grabTasks().then((tasks) => {
-   tasks.forEach(task => {
-
-      let taskName = task.task_name;
-      let date = task.task_date;
-
-       const htmlBuilder =
-       `
-       <h1>${taskName}</h1>
-      <h2>${date}</h2>
-
-      `
-
-       let fullTaskList = document.querySelector("#full_task_list")
+import taskDelete from "./taskDelete"
+import addToDOM from "./taskAddToDOM";
+import HTMLrep from "./taskForEach";
 
 
-        fullTaskList.innerHTML += htmlBuilder
+const taskEventListener = function () {
+   const EnterTaskButton = document.querySelector("#EnterTask")
 
-  });
-  })
+   EnterTaskButton.addEventListener("click", () => {
+     const taskName = document.querySelector("#enterATask").value
 
-} )}
+     const completionDate = document.querySelector("#inputFirstName").value
+
+      let taskObject = {
+            taskName: taskName,
+            completionDate: completionDate
+      }
+
+      APIManager.postTasks(taskObject)
+      .then(() => APIManager.grabTasks())
+   .then(() => HTMLrep())
+   })
+}
 
 export default taskEventListener

@@ -1,10 +1,13 @@
 const addToDOM = (task) => {
-return `<h1>${task.task_name}</h1>
-        <h1>${task.task_date}</h1>
-        <h1>${task.task_date}</h1>
-        <h1>${task.UserId}</h1>
 
+return   `<div id="${task.id}">
+          <h3>${task.taskName}</h3>
+          <h3>${task.completionDate}</h3>
+          <button id="TaskEditBTN--${task.id}">edit</button>
+          <button id="TaskDeleteBTN--${task.id}">delete</button>
+        </div>
         `
+
 }
 
 export default addToDOM;

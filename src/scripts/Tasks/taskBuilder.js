@@ -1,5 +1,5 @@
 
-import taskEventListener from "./tasksEventListener"
+
 
   const taskCreator = () => {
     document.querySelector("#output").innerHTML +=
@@ -25,16 +25,13 @@ import taskEventListener from "./tasksEventListener"
      <button id="EnterTask">Enter Task</button>
 </div>
 
-<div>
+<div id = "taskTotal">
 
 <h3>Task List</h3>
 <h1 id="full_task_list"></h1>
 
 </div>
     `
-    taskEventListener();
-
-
 
   }
 
