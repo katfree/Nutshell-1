@@ -1,7 +1,5 @@
 import dataManager from "./dataManager"
 import eventListHTML from "./eventScripts/eventListHTML";
-import eventDataManager from "../scripts/eventScripts/eventDataManager"
-
 
 const registrationFormButton = () => {
     document.querySelector("#formButton").addEventListener("click", () => {

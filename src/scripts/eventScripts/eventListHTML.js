@@ -1,4 +1,4 @@
-import eventSaveFunction from "./eventListEventListener";
+import eventListenerFunctions from "./eventListEventListener";
 import getEventDataFunction from "./eventListForm";
 
 const eventListHTML = () => {
@@ -25,9 +25,10 @@ const eventListHTML = () => {
 
     <button id="saveEvent">Save Event</button>
     <div id="currentEvents">Current Events </div>
-</div>
+    </div>
     `
-eventSaveFunction()
+eventListenerFunctions.eventSaveFunction()
 getEventDataFunction()
+eventListenerFunctions.eventDeleteFunction()
 }
 export default eventListHTML
