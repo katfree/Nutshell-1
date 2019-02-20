@@ -16,17 +16,21 @@ const taskEventListener = function () {
 
      const completionDate = document.querySelector("#expectedCompDate").value
 
+     const userId= sessionStorage.getItem("userId")
+
       let taskObject = {
             taskName: taskName,
-            completionDate: completionDate
+            completionDate: completionDate,
+            userId: parseInt(userId)
       }
+
 
       const buttontext = document.querySelector("#BtmFrmEnterTask").textContent
 
       if(buttontext !== "re-enter") {
 
          APIManager.postTasks(taskObject)
-         .then(() => APIManager.grabTasks())
+         .then(() => APIManager.grabTasks(userId))
       .then(() => HTMLrep())
 
       } else if (buttontext === "re-enter") {

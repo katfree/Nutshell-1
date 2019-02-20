@@ -17,7 +17,6 @@ const taskEditInput = () => {
 
    const newTask = taskEditObj(taskName, completionDate)
 
-   
 
 
   })

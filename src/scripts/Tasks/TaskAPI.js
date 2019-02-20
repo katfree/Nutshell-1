@@ -1,6 +1,6 @@
 const APIManager = {
-  grabTasks: function () {
-    return fetch("http://localhost:3005/Tasks/")
+  grabTasks: function (userId) {
+    return fetch(`http://localhost:3005/Tasks?userId=${userId}`)
       .then(res => res.json())
   },
   postTasks: function (userObject) {

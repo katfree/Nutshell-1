@@ -3,7 +3,8 @@ import APIManager from "./TaskAPI";
 
 
 const HTMLrep = () => {
-  APIManager.grabTasks().then((taco) => {
+  const userId= sessionStorage.getItem("userId")
+  APIManager.grabTasks(userId).then((taco) => {
     document.querySelector("#full_task_list").innerHTML = ""
     return taco
   }).then((tasks) => {
