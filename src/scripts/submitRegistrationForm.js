@@ -1,4 +1,7 @@
 import dataManager from "./dataManager"
+import chatSection from "./chats/chatsHTML";
+import CreateChatDOM from "./chats/chatsToDOM";
+
 
 const registrationFormButton = () => {
     document.querySelector("#formButton").addEventListener("click", () => {
@@ -23,7 +26,19 @@ const registrationFormButton = () => {
 
                 } else {
                     dataManager.postUserData(inputUserObject)
-                    .then(document.querySelector("#registartionForm").remove())
+                    .then((response) => {
+                    sessionStorage.setItem("userId", response.id)
+                    sessionStorage.getItem(response.id)
+                    })
+                     .then( () => sessionStorage.setItem("userName", userName))
+                     .then( () => sessionStorage.getItem(userName))
+                     .then(() => sessionStorage.setItem("firstName", first_name))
+                     .then(() => sessionStorage.getItem(first_name))
+                     .then(() => sessionStorage.setItem("lastName", last_name))
+                     .then(() => sessionStorage.getItem(last_name))
+                     .then( () => document.querySelector("#registartionForm").remove())
+                     .then( () => chatSection())
+                     .then ( () => CreateChatDOM())
 
                 }
 
@@ -31,8 +46,8 @@ const registrationFormButton = () => {
             })
 
 
-
             )
+            console.log(dataManager)
     })
 }
 
