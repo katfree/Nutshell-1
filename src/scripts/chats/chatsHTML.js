@@ -1,10 +1,9 @@
 import NewMessageEventListener from "./addMessageEventListener";
 import deleteMessage from "./chatsDeleteButton";
 import editContact from "./chatsEditButton";
-import saveUpdatedChat from "./saveEditedChat";
-import CreateChatDOM from "./chatsToDOM";
 
-const chatSection = () => { document.querySelector("#output").innerHTML+= `
+const chatSection = () => {
+    document.querySelector("#output").innerHTML += `
 <div id = "chatSection">
 <input type="hidden"  id="currentChatId" value="">
 <h1> Chats </h1>
@@ -28,9 +27,9 @@ const chatSection = () => { document.querySelector("#output").innerHTML+= `
 
 
 
-NewMessageEventListener()
-deleteMessage.deleteMessages()
-editContact()
+    NewMessageEventListener()
+    deleteMessage.deleteMessages()
+    editContact()
 
 
 

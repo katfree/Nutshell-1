@@ -1,6 +1,5 @@
 const ChatsDataManager = {
     postChatData: function (userObject) {
-        console.log("post")
         return fetch("http://localhost:3005/Chats/", {
             method: "POST",
             headers: {
@@ -12,7 +11,6 @@ const ChatsDataManager = {
 
     },
     getChatData: function (messageId) {
-        console.log("get")
         return fetch(`http://localhost:3005/Chats/${messageId}`)
             .then(res => res.json())
 
