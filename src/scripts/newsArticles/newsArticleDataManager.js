@@ -1,0 +1,40 @@
+const newsArticleDataManager = {
+    getNewsArticles: function () {
+        return fetch("http://localhost:3005/NewsArticles/?_sort=date&_order=asc")
+            .then(res => res.json())
+
+    },
+
+    postNewsArticle: function (userNewsArticles) {
+        return fetch("http://localhost:3005/NewsArticles/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+
+            },
+            body: JSON.stringify(userNewsArticles)
+        })
+            .then(res => res.json())
+
+    },
+
+    deleteNewsArticles: function (articleID) {
+        return fetch(`http://localhost:3005/NewsArticles/${articleID}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+    },
+
+    editNewsArticle: function (articleID) {
+        return fetch(`http://localhost:3005/NewsArticles/${articleID}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+    }
+}
+
+export default newsArticleDataManager

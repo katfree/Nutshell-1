@@ -1,15 +1,11 @@
 import dataManager from "./dataManager"
-
+import addNewsArticle from "./newsArticles/newsArticleToHTML";
 const registrationFormButton = () => {
     document.querySelector("#formButton").addEventListener("click", () => {
         const userName = document.querySelector("#inputUsername").value
         const password = document.querySelector("#inputPassword").value
         const first_name = document.querySelector("#inputFirstName").value
         const last_name = document.querySelector("#inputLastName").value
-<<<<<<< HEAD
-        
-=======
->>>>>>> master
 
         const inputUserObject = {
             userName: userName,
@@ -28,6 +24,8 @@ const registrationFormButton = () => {
                 } else {
                     dataManager.postUserData(inputUserObject)
                     .then(document.querySelector("#registartionForm").remove())
+                     addNewsArticle()
+
 
                 }
 
