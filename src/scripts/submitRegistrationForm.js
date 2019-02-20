@@ -1,5 +1,5 @@
 import dataManager from "./dataManager"
-import tasksPage from "./Tasks/task"
+import mainPage from "./mainPage";
 
 
 const registrationFormButton = () => {
@@ -24,19 +24,27 @@ const registrationFormButton = () => {
 
         dataManager.getData()
             .then((userList => {
-                const search = userList.filter(user => user.userName === inputUserObject.userName )
+                const search = userList.filter(user => user.userName === inputUserObject.userName)
                 console.log(search)
                 if (search.length) {
                     alert("This user name is taken")
 
                 } else {
                     dataManager.postUserData(inputUserObject)
-                    .then(document.querySelector("#registartionForm").remove())
-                    tasksPage();
+                        .then((response) => {
+                            sessionStorage.setItem("userId", response.id)
+                            sessionStorage.getItem(response.id)
+                        })
+
+                        .then(() => document.querySelector("#registartionForm").remove())
+                        .then(() => mainPage())
+
+
                 }
             })
 
             )
+        console.log(dataManager)
     })
 }
 

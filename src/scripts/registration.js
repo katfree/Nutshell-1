@@ -3,6 +3,6 @@ import registrationHTML from "./registrationForm";
 const registrationForm = () => {
      document.querySelector("#output").innerHTML = ""
 
-          registrationHTML()
+     registrationHTML()
 }
 export default registrationForm
