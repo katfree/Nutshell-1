@@ -11,7 +11,7 @@ const taskEventListener = function () {
    EnterTaskButton.addEventListener("click", () => {
      const taskName = document.querySelector("#enterATask").value
 
-     const completionDate = document.querySelector("#inputFirstName").value
+     const completionDate = document.querySelector("#expectedCompDate").value
 
       let taskObject = {
             taskName: taskName,

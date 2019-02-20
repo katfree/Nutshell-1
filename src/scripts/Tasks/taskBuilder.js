@@ -1,4 +1,8 @@
 
+import taskEventListener from "./tasksEventListener";
+import taskDelete from "./taskDelete"
+import taskEdit from "./taskEdit";
+import taskEditInput from "./taskEditInput";
 
 
   const taskCreator = () => {
@@ -6,7 +10,7 @@
     `
     <div id = "TaskForm">
     <h1>Tasks<h1>
-
+    <input id="hiddenId" type="hidden"></input>
     <fieldset>
     <label>Enter a Task</label>
     <input type="text" id="enterATask"></input>
@@ -14,7 +18,7 @@
 
     <fieldset>
     <label>Expected Completetion Date</label>
-    <input type="date" id="inputFirstName"></input>
+    <input type="text" placeholder="yyyy-mm-dd" id="expectedCompDate"></input>
     </fieldset>
 
     <fieldset>
