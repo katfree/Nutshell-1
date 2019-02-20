@@ -1,6 +1,7 @@
 import dataManager from "./dataManager"
 import chatSection from "./chats/chatsHTML";
 import CreateChatDOM from "./chats/chatsToDOM";
+import mainPage from "./mainPage";
 
 
 const registrationFormButton = () => {
@@ -19,26 +20,21 @@ const registrationFormButton = () => {
         }
         dataManager.getData()
             .then((userList => {
-                const search = userList.filter(user => user.userName === inputUserObject.userName )
+                const search = userList.filter(user => user.userName === inputUserObject.userName)
                 console.log(search)
                 if (search.length) {
                     alert("This user name is taken")
 
                 } else {
                     dataManager.postUserData(inputUserObject)
-                    .then((response) => {
-                    sessionStorage.setItem("userId", response.id)
-                    sessionStorage.getItem(response.id)
-                    })
-                     .then( () => sessionStorage.setItem("userName", userName))
-                     .then( () => sessionStorage.getItem(userName))
-                     .then(() => sessionStorage.setItem("firstName", first_name))
-                     .then(() => sessionStorage.getItem(first_name))
-                     .then(() => sessionStorage.setItem("lastName", last_name))
-                     .then(() => sessionStorage.getItem(last_name))
-                     .then( () => document.querySelector("#registartionForm").remove())
-                     .then( () => chatSection())
-                     .then ( () => CreateChatDOM())
+                        .then((response) => {
+                            sessionStorage.setItem("userId", response.id)
+                            sessionStorage.getItem(response.id)
+                        })
+
+                        .then(() => document.querySelector("#registartionForm").remove())
+                        .then(() => mainPage())
+
 
                 }
 
@@ -47,7 +43,7 @@ const registrationFormButton = () => {
 
 
             )
-            console.log(dataManager)
+        console.log(dataManager)
     })
 }
 

@@ -1,19 +1,20 @@
 const ChatsDataManager = {
-    getChatData: function(messageId) {
+    postChatData: function (userObject) {
+        console.log("post")
+        return fetch("http://localhost:3005/Chats/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userObject)
+        })
+            .then(res => res.json())
+
+    },
+    getChatData: function (messageId) {
         console.log("get")
         return fetch(`http://localhost:3005/Chats/${messageId}`)
-    .then(res => res.json())
-
- },
-    postChatData: function(userObject){
-        console.log("post")
-     return fetch("http://localhost:3005/Chats/", {
-         method: "POST",
-         headers: {"Content-Type":"application/json"
-     },
-     body: JSON.stringify(userObject)
-     })
-     .then(res => res.json())
+            .then(res => res.json())
 
     },
 
@@ -36,7 +37,7 @@ const ChatsDataManager = {
 
     },
 
- }
+}
 
 
- export default ChatsDataManager
+export default ChatsDataManager
