@@ -26,7 +26,7 @@ import taskEditInput from "./taskEditInput";
     <input type="checkbox" id="markATaskComplete"></input>
     </fieldset>
 
-     <button id="EnterTask">Enter Task</button>
+     <button id="BtmFrmEnterTask">Enter Task</button>
 </div>
 
 <div id = "taskTotal">

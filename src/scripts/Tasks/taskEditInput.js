@@ -6,8 +6,8 @@ import HTMLrep from "./taskForEach"
 const taskEditInput = () => {
   document.querySelector("#EnterTask").addEventListener("click", () => {
 
-    console.log('taskEditInput')
-    
+    console.log("taskEditInput")
+
     const buttonText = document.querySelector("#EnterTask").textContent;
 
     const taskName = document.querySelector("#EnterTask").value
@@ -30,3 +30,4 @@ const taskEditInput = () => {
 }
 
 export default taskEditInput
+

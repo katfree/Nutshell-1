@@ -1,25 +1,25 @@
 import APIManager from "./TaskAPI";
 import HTMLrep from "./taskForEach"
 import editFunction from "./editFunction"
-
+import taskEditObj from "./taskEditObj"
 
 const taskEdit = () => {
   document.querySelector("#taskTotal").addEventListener("click", (event) => {
     if (event.target.id.startsWith("TaskEditBTN--")) {
       const taskId = event.target.id.split("--")[1]
 
-console.log('taskEdit')
 
       document.querySelector("#hiddenId").value = taskId
 
-     document.querySelector("#EnterTask").textContent =
-     "edit"
+      document.querySelector("#BtmFrmEnterTask").textContent =
+      "edit"
 
-    APIManager.grabTasks(taskId).then((tasks) => {
+      console.log(taskId)
 
+    APIManager.postTasks(taskId).then((tasks) => {
      document.querySelector("#enterATask").value = tasks.taskName;
 
-    document.getElementById("expectedCompDate").value = tasks.completionDate;
+    document.querySelector("#expectedCompDate").value = tasks.completionDate;
 
     })
 
