@@ -15,7 +15,6 @@ const HTMLrep = () => {
 
    let fullTaskList = document.querySelector("#full_task_list")
 
-
   fullTaskList.innerHTML += htmlBuilder
 
      });

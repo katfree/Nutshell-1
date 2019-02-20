@@ -17,7 +17,8 @@ const APIManager = {
         method: "DELETE"
       })
   },
-  editTasks: (taskId, task) => {
+  editTasks: (task, taskId) => {
+    console.log(task)
     return fetch(`http://localhost:3005/Tasks/${taskId}`,
       {
         method: "PUT",
@@ -26,7 +27,11 @@ const APIManager = {
         },
         body: JSON.stringify(task)
       }
-    )}
+    )},
+    getDataToEdit: function (id) {
+      return fetch(`http://localhost:3005/Tasks/${id}`)
+        .then(res => res.json())
+    }
 }
 export default APIManager
 

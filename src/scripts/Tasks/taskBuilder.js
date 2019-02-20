@@ -21,12 +21,7 @@ import taskEditInput from "./taskEditInput";
     <input type="text" placeholder="yyyy-mm-dd" id="expectedCompDate"></input>
     </fieldset>
 
-    <fieldset>
-    <label>Mark a Task Complete</label>
-    <input type="checkbox" id="markATaskComplete"></input>
-    </fieldset>
-
-     <button id="BtmFrmEnterTask">Enter Task</button>
+     <button id="BtmFrmEnterTask" class="re-enter">Enter Task</button>
 </div>
 
 <div id = "taskTotal">
