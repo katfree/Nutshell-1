@@ -1,4 +1,8 @@
 import dataManager from "./dataManager"
+import chatSection from "./chats/chatsHTML";
+import CreateChatDOM from "./chats/chatsToDOM";
+import mainPage from "./mainPage";
+
 
 const registrationFormButton = () => {
     document.querySelector("#formButton").addEventListener("click", () => {
@@ -16,14 +20,21 @@ const registrationFormButton = () => {
         }
         dataManager.getData()
             .then((userList => {
-                const search = userList.filter(user => user.userName === inputUserObject.userName )
+                const search = userList.filter(user => user.userName === inputUserObject.userName)
                 console.log(search)
                 if (search.length) {
                     alert("This user name is taken")
 
                 } else {
                     dataManager.postUserData(inputUserObject)
-                    .then(document.querySelector("#registartionForm").remove())
+                        .then((response) => {
+                            sessionStorage.setItem("userId", response.id)
+                            sessionStorage.getItem(response.id)
+                        })
+
+                        .then(() => document.querySelector("#registartionForm").remove())
+                        .then(() => mainPage())
+
 
                 }
 
@@ -31,8 +42,8 @@ const registrationFormButton = () => {
             })
 
 
-
             )
+        console.log(dataManager)
     })
 }
 

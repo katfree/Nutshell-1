@@ -1,8 +1,9 @@
 import registrationFormButton from "./submitRegistrationForm";
 
+
 const registrationHTML = () => {
     document.querySelector("#output").innerHTML +=
-    `
+        `
     <div id = "registartionForm">
     <h1>Registration Form<h1>
 
