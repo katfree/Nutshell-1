@@ -1,5 +1,8 @@
 import dataManager from "./dataManager"
 import addNewsArticle from "./newsArticles/newsArticleToHTML";
+import mainPage from "./mainPage";
+
+
 const registrationFormButton = () => {
     document.querySelector("#formButton").addEventListener("click", () => {
         const userName = document.querySelector("#inputUsername").value
@@ -16,15 +19,20 @@ const registrationFormButton = () => {
         }
         dataManager.getData()
             .then((userList => {
-                const search = userList.filter(user => user.userName === inputUserObject.userName )
+                const search = userList.filter(user => user.userName === inputUserObject.userName)
                 console.log(search)
                 if (search.length) {
                     alert("This user name is taken")
 
                 } else {
                     dataManager.postUserData(inputUserObject)
-                    .then(document.querySelector("#registartionForm").remove())
-                     addNewsArticle()
+                        .then((response) => {
+                            sessionStorage.setItem("userId", response.id)
+                            sessionStorage.getItem(response.id)
+                        })
+
+                        .then(() => document.querySelector("#registartionForm").remove())
+                        .then(() => mainPage())
 
 
                 }
@@ -33,8 +41,8 @@ const registrationFormButton = () => {
             })
 
 
-
             )
+        console.log(dataManager)
     })
 }
 
