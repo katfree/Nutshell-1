@@ -1,11 +1,10 @@
 const eventDataManager = {
 getEventData: function() {
-    return fetch("http://localhost:3005/Events/")
+    return fetch("http://localhost:3005/Events?_sort=event_date&_order=asc")
     .then(res => res.json())
 
     },
 postEventData: function(eventObject){
-    console.log("save")
     return fetch("http://localhost:3005/Events/", {
         method: "POST",
         headers: {"Content-Type":"application/json"
@@ -25,9 +24,7 @@ postEventData: function(eventObject){
 },
 
     editEventData: (Id, eventToChangeObject) => {
-        console.log("edit", eventToChangeObject)
-        console.log("e",`http://localhost:3005/Events/${Id}`)
-    return fetch(`http://localhost:3005/Events/${Id}`, {
+      return fetch(`http://localhost:3005/Events/${Id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"

@@ -18,7 +18,6 @@ const registrationFormButton = () => {
         dataManager.getData()
             .then((userList => {
                 const search = userList.filter(user => user.userName === inputUserObject.userName )
-                console.log(search)
                 if (search.length) {
                     alert("This user name is taken")
 

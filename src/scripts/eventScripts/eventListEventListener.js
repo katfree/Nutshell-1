@@ -1,6 +1,5 @@
 import eventDataManager from "./eventDataManager";
 import getEventDataFunction from "./eventListForm";
-import eventListHTML from "./eventListHTML";
 
 const eventListenerFunctions = {
     eventSaveFunction: () => {
