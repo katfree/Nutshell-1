@@ -27,12 +27,13 @@ const newsArticleDataManager = {
         })
     },
 
-    editNewsArticle: function (articleID) {
+    editNewsArticle: function (editedArticle ,articleID) {
         return fetch(`http://localhost:3005/NewsArticles/${articleID}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
-            }
+            },
+            body: JSON.stringify(editedArticle)
         })
     }
 }

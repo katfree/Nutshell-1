@@ -1,6 +1,8 @@
 import articleSaveButton from "./newsArticleEventListener";
 import getTheNews from "./newsArticleObject";
 import deleteFunction from "./articleDeleteButton";
+import saveNewArticle from "./saveNewArticle";
+import articleEditFunction from "./articleEditButton";
 
 
 const addNewsArticle = () => {
@@ -30,6 +32,8 @@ const addNewsArticle = () => {
 `
     articleSaveButton()
     getTheNews()
+    articleEditFunction()
+    saveNewArticle()
     deleteFunction()
 
 
