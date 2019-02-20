@@ -7,9 +7,15 @@ const getEventDataFunction = () => {
         events.forEach(event => {
 
             let nameOfEvent = event.event_name
-            let dateOfEvent = event.event_date
             let locationOfEvent = event.event_location
+            let dateOfEvent = event.event_date
 
+            let today = new Date()
+            let dd = today.getDate()
+            let mm = today.getMonth()+ 1;
+            let yyyy = today.getFullYear()
+            today = yyyy + "-" + mm + "-" + dd
+            console.log(today)
             const eventHtmlTemplate =
             `
             <section id="${event.id}">
