@@ -13,10 +13,10 @@ const taskEdit = () => {
 
       document.querySelector("#BtmFrmEnterTask").textContent =
       "edit"
-
       console.log(taskId)
 
-    APIManager.postTasks(taskId).then((tasks) => {
+
+    APIManager.grabTasks(taskId).then((tasks) => {
      document.querySelector("#enterATask").value = tasks.taskName;
 
     document.querySelector("#expectedCompDate").value = tasks.completionDate;
