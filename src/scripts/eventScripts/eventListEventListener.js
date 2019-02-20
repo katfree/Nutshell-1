@@ -4,6 +4,7 @@ import getEventDataFunction from "./eventListForm";
 const eventListenerFunctions = {
     eventSaveFunction: () => {
         document.getElementById("saveEvent").addEventListener("click", (event) => {
+            const userId = sessionStorage.getItem("userId")
             if (event.target.id === "saveEvent") {
 
                 let eventNameInput = document.querySelector("#eventName").value
@@ -13,7 +14,8 @@ const eventListenerFunctions = {
                 const eventObject = {
                     event_name: eventNameInput,
                     event_date: eventDateInput,
-                    event_location: eventLocationInput
+                    event_location: eventLocationInput,
+                    userId: parseInt(userId)
                 }
                 if (eventNameInput === "" || eventDateInput === "" || eventLocationInput === "") {
                     alert("Event form is not completed")
@@ -22,6 +24,7 @@ const eventListenerFunctions = {
                         .then(() => {
                             getEventDataFunction()
                         })
+                        .then(() => sessionStorage.setItem("event_name", eventNameInput))
                 }
             }
         })

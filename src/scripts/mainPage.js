@@ -5,9 +5,9 @@ import eventListHTML from "./eventScripts/eventListHTML"
 const mainPage = () => {
 
     document.querySelector("#output").innerHTML += ""
+    eventListHTML()
     chatSection()
     CreateChatDOM()
-    eventListHTML()
 
 }
 
