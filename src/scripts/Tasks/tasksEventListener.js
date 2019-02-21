@@ -8,7 +8,6 @@ import HTMLrep from "./taskForEach";
 const taskEventListener = function () {
    const EnterTaskButton = document.querySelector("#BtmFrmEnterTask")
 
-
    console.log("hiTasksEL")
 
    EnterTaskButton.addEventListener("click", () => {
