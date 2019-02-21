@@ -3,3 +3,32 @@ font-size: 30px;
 background-color: black;
 color: goldenrod;
 }
+
+#outputNews {
+    border: 2px solid black;
+}
+#outputChats {
+    border: 2px solid black;
+}
+#outputTasks {
+    border: 2px solid black;
+}
+#outputEvents {
+    border: 2px solid black;
+}
+
+#flexBox {
+    display: flex;
+    justify-content: space-around;
+    flex-flow:;
+}
+#header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+    color: wheat;
+}
+
+body {
+    background-color: goldenrod;
+}
