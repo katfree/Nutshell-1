@@ -40,6 +40,12 @@ const registrationFormButton = () => {
                         .then(() => mainPage())
 
 
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> master
                 }
             })
 
