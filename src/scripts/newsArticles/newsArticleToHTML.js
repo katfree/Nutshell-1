@@ -6,7 +6,7 @@ import articleEditFunction from "./articleEditButton";
 
 
 const addNewsArticle = () => {
-    document.getElementById("output").innerHTML +=
+    document.getElementById("outputNews").innerHTML +=
         `
 <h1>Submit News Form</h1>
 <div id ="createNewsArticle">

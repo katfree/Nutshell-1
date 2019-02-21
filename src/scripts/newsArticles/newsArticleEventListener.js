@@ -23,7 +23,7 @@ const articleSaveButton = () => {
 
             newsArticleDataManager.postNewsArticle(inputArticle)
                 .then(() => {
-                    newsArticleDataManager.getNewsArticles(userId)
+                    newsArticleDataManager.getNewsArticles()
                 })
                 .then(() => getTheNews()
                 )

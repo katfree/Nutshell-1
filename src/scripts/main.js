@@ -11,15 +11,7 @@ const getfromsessionstorage = sessionStorage.getItem("userId")
 console.log(getfromsessionstorage)
 if (getfromsessionstorage) {
 
-    addNewsArticle()
-
-    tasksPage()
-
-    eventListHTML()
-
-    chatSection()
-
-    CreateChatDOM()
+    mainPage()
 
 
 
