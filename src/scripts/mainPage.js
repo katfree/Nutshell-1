@@ -10,7 +10,7 @@ import tasksPage from "./Tasks/task"
 
 const mainPage = () => {
 
-    document.querySelector("#output").innerHTML += ""
+    // document.querySelector("#output").innerHTML += ""
 
     // document.querySelector("#output").innerHTML += ""
     chatSection()
@@ -21,3 +21,5 @@ const mainPage = () => {
 }
 
 export default mainPage
+
+

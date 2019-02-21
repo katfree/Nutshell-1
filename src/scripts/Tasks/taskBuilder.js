@@ -6,7 +6,7 @@ import taskEditInput from "./taskEditInput";
 
 
   const taskCreator = () => {
-    document.querySelector("#output").innerHTML +=
+    document.querySelector("#outputTasks").innerHTML +=
     `
     <div id = "TaskForm">
     <h1>Tasks<h1>

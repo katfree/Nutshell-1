@@ -2,7 +2,7 @@ import eventListenerFunctions from "./eventListEventListener";
 import getEventDataFunction from "./eventListForm";
 
 const eventListHTML = () => {
-    document.querySelector("#output").innerHTML +=
+    document.querySelector("#outputEvents").innerHTML +=
     `
     <div id= "eventListForm">
     <h1>Event List<h1>

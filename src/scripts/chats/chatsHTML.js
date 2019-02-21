@@ -3,7 +3,7 @@ import deleteMessage from "./chatsDeleteButton";
 import editContact from "./chatsEditButton";
 
 const chatSection = () => {
-    document.querySelector("#output").innerHTML += `
+    document.querySelector("#outputChats").innerHTML += `
 <div id = "chatSection">
 <input type="hidden"  id="currentChatId" value="">
 <h1> Chats </h1>
