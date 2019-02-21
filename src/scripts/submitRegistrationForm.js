@@ -1,5 +1,10 @@
 import dataManager from "./dataManager"
 import mainPage from "./mainPage";
+import CreateChatDOM from "./chats/chatsToDOM";
+import addNewsArticle from "./newsArticles/newsArticleToHTML";
+import tasksPage from "./Tasks/task";
+import eventListHTML from "./eventScripts/eventListHTML";
+import chatSection from "./chats/chatsHTML";
 
 
 const registrationFormButton = () => {
@@ -37,15 +42,14 @@ const registrationFormButton = () => {
                         })
 
                         .then(() => document.querySelector("#registartionForm").remove())
-                        .then(() => mainPage())
+                        chatSection()
+                        CreateChatDOM()
+                        addNewsArticle()
+                        eventListHTML()
+                        tasksPage()
 
 
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> master
                 }
             })
 
