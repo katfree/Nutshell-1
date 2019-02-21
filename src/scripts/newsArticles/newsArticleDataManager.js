@@ -1,6 +1,6 @@
 const newsArticleDataManager = {
-    getNewsArticles: function () {
-        return fetch("http://localhost:3005/NewsArticles/?_sort=date&_order=asc")
+    getNewsArticles: function (userId) {
+        return fetch(`http://localhost:3005/NewsArticles/?_sort=date&_order=asc/${userId}`)
             .then(res => res.json())
 
     },

@@ -4,7 +4,7 @@ import newsArticleDataManager from "./newsArticleDataManager";
 const getTheNews = () => {
     document.getElementById("newsArticleOutput").innerHTML = ""
 
-    newsArticleDataManager.getNewsArticles()
+    newsArticleDataManager.getNewsArticles(userId)
         .then((articles) => {
 
             articles.forEach(article => {

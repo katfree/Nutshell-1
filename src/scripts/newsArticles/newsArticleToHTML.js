@@ -8,6 +8,7 @@ import articleEditFunction from "./articleEditButton";
 const addNewsArticle = () => {
     document.getElementById("output").innerHTML +=
         `
+<h1>Submit News Form</h1>
 <div id ="createNewsArticle">
 <input type="hidden" id="hiddenID"></input>
 <fieldset>
@@ -25,7 +26,7 @@ const addNewsArticle = () => {
 <input type="text" id="NewsArticleURL"></input>
 </fieldset>
 <button id="submitNewArticle">Submit Article</button>
-
+<h1>Your News</h1>
 <div id="newsArticleOutput"></div>
 
 </div>

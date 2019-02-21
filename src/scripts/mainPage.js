@@ -6,8 +6,8 @@ const mainPage = () => {
 
     document.querySelector("#output").innerHTML += ""
     chatSection()
-    CreateChatDOM()
     addNewsArticle()
+    CreateChatDOM()
 
 }
 
