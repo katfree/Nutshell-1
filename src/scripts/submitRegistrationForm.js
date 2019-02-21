@@ -1,5 +1,4 @@
 import dataManager from "./dataManager"
-import addNewsArticle from "./newsArticles/newsArticleToHTML";
 import mainPage from "./mainPage";
 
 
@@ -15,8 +14,14 @@ const registrationFormButton = () => {
             password: password,
             first_name: first_name,
             last_name: last_name,
-
         }
+
+        sessionStorage.setItem(inputUserObject, JSON.stringify(inputUserObject))
+
+        let sesh = JSON.parse(sessionStorage.getItem("inputUserObject"))
+
+        // console.log(sesh)
+
         dataManager.getData()
             .then((userList => {
                 const search = userList.filter(user => user.userName === inputUserObject.userName)
@@ -36,10 +41,7 @@ const registrationFormButton = () => {
 
 
                 }
-
-
             })
-
 
             )
         console.log(dataManager)
