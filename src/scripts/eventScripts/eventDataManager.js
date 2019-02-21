@@ -1,6 +1,6 @@
 const eventDataManager = {
-getEventData: function() {
-    return fetch("http://localhost:3005/Events?_sort=event_date&_order=asc")
+getEventData: function(userid) {
+    return fetch("http://localhost:3005/Events?_sort=event_date&_order=asc$")
     .then(res => res.json())
 
     },
